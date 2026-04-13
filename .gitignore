@@ -4,3 +4,11 @@ __pycache__
 
 resources/jsons/*.json
 resources/.env
+resources/question_generation/.*
+resources/question_generation/*.jsonl
+
+# Question Generation
+resources/question_generation/.last_viewed
+
+# Question Asking
+resources/question_generation/.last_asked
