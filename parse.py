@@ -1,16 +1,4 @@
-import os
-import time
-import re
-import json
-import copy
-import requests
-from datetime import datetime, timezone
-from pathlib import Path
-from abc import ABC, abstractmethod
-
-from tqdm import tqdm
 from dotenv import load_dotenv
-
 from files import MarkdownParser, JsonUploader
 
 load_dotenv("./resources/.env")

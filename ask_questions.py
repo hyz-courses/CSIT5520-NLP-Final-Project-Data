@@ -1,7 +1,3 @@
-import os
-import json
-import requests
-from typing import List, Dict
 from dotenv import load_dotenv
 from files import QuestionAsker
 
