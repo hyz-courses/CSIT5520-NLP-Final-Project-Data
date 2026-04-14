@@ -179,7 +179,7 @@ class QuestionGenerator(FileLineProcessor):
             api_key=self.QWEN_API_KEY, base_url=self.ALICLOUD_BASE_URL)
 
         self.prompt_cn = "请根据以下文本，生成10个问题。每个问题应尽量口语化，不应超过20字。不要提供额外的文字内容。文本如下：\n<sample>\n{text}\n</sample>\n /nothink"
-        self.prompt_en = "Please generate 10 questions based on the following text in English. Each question should be phrased in a oral speaking style, and should contain no more than 30 words. Do not provide any extra texts (such as greetings, etc.). Context is as follows:\n<sample>\n{text}\n</sample>\n /nothink"
+        self.prompt_en = "Please generate 10 questions based on the following text in English only. Do NOT use Chinese. Each question should be phrased in a oral speaking style, and should contain no more than 30 words. Do not provide any extra texts (such as greetings, etc.). Context is as follows:\n<sample>\n{text}\n</sample>\n /nothink"
 
     def gen_question_on_one_text(self, text: str) -> str:
         result = self.openai_client.chat.completions.create(
