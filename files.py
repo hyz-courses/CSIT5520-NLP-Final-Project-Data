@@ -53,7 +53,7 @@ class FileLineProcessor(ABC):
             except ValueError:
                 last_viewed_num = 0
 
-        with open(self.des_file, "w", encoding="utf-8") as des_f:
+        with open(self.des_file, "a", encoding="utf-8") as des_f:
             with open(self.count_file, "w") as last_viewed_f:
                 with open(self.source_file, "r") as f:
                     i = 0
@@ -181,7 +181,7 @@ class QuestionGenerator(FileLineProcessor):
         self.prompt_cn = "请根据以下文本，生成10个问题。每个问题应尽量口语化，不应超过20字。不要提供额外的文字内容。文本如下：\n<sample>\n{text}\n</sample>\n /nothink"
         self.prompt_en = "Please generate 10 questions based on the following text in English. Each question should be phrased in a oral speaking style, and should contain no more than 30 words. Do not provide any extra texts (such as greetings, etc.). Context is as follows:\n<sample>\n{text}\n</sample>\n /nothink"
 
-    def ask_question_on_one_text(self, text: str) -> str:
+    def gen_question_on_one_text(self, text: str) -> str:
         result = self.openai_client.chat.completions.create(
             model=str(self.QWEN_QUESTION_GENERATION_MODEL),
             messages=[
@@ -209,9 +209,9 @@ class QuestionGenerator(FileLineProcessor):
         if len(text) < 15:
             return record
 
-        record["questions_cn"] = self.ask_question_on_one_text(
+        record["questions_cn"] = self.gen_question_on_one_text(
             self.prompt_cn.format(text=text))
-        record["questions_en"] = self.ask_question_on_one_text(
+        record["questions_en"] = self.gen_question_on_one_text(
             self.prompt_en.format(text=text))
 
         return record
