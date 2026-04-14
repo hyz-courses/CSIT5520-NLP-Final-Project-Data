@@ -7,9 +7,9 @@ from files import QuestionAsker
 
 load_dotenv("resources/.env")
 
-FILE_PATH = "resources/question_generation/milvus_questions.jsonl"
-DESTINATION_PATH = "resources/question_generation/milvus_answers.jsonl"
-LAST_ASKED = "resources/question_generation/.last_asked"
+FILE_PATH = "resources/question/milvus_questions.jsonl"
+DESTINATION_PATH = "resources/question/milvus_answers.jsonl"
+LAST_ASKED = "resources/question/.last_asked"
 
 if __name__ == "__main__":
     question_asker = QuestionAsker(FILE_PATH, DESTINATION_PATH, LAST_ASKED)

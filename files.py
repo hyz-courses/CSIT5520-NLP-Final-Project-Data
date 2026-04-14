@@ -42,14 +42,14 @@ class FileLineProcessor(ABC):
         self.des_file = des_file
 
     @abstractmethod
-    def process_one(self, line: str):
+    def process_one(self, line: str, line_num: int):
         ...
 
     def process_all(self):
         with open(self.count_file, "r") as last_viewed_f:
             try:
                 last_viewed_num = int(last_viewed_f.read().strip())
-                print(f"Last viewed at: {last_viewed_num}")
+                print(f"Last stopped at: {last_viewed_num}")
             except ValueError:
                 last_viewed_num = 0
 
@@ -67,7 +67,7 @@ class FileLineProcessor(ABC):
                         last_viewed_f.write(f"{i}\n")
                         last_viewed_f.flush()
 
-                        res = self.process_one(line)
+                        res = self.process_one(line, i)
                         des_f.write(json.dumps(res, ensure_ascii=False) + "\n")
                         print(f"{i}: Written line. ")
 
@@ -195,7 +195,7 @@ class QuestionGenerator(FileLineProcessor):
             return "None"
         return questions
 
-    def process_one(self, line: str):
+    def process_one(self, line: str, line_num: int):
         data = json.loads(line)
         id: int = data["id"]
         text: str = data["text"]
@@ -229,10 +229,10 @@ class QuestionAsker(FileLineProcessor):
         }
         self.available_languages = ["cn", "en"]
 
-    def ask_one_batch_questions(self, questions: List[str]):
+    def ask_one_batch_questions(self, questions: List[str], line_num: int):
         received_chunks_by_question = []
         similarities_by_question = []
-        for question in questions:
+        for question in tqdm(questions, desc=f"Line {line_num}"):
             question = question.strip()
             data = {
                 "inputs": {"question": question},
@@ -246,14 +246,16 @@ class QuestionAsker(FileLineProcessor):
 
             # {distance: float, id: int}
             result_list: List[Dict[str, float | int]
-                              ] = response["data"]["outputs"]["id"][0]["results"]
+                              ] = eval(response["data"]["outputs"]["id"])
+
             retrieved_chunks = [result["id"] for result in result_list]
             similarities = [result["distance"] for result in result_list]
-        received_chunks_by_question.append(retrieved_chunks)
-        similarities_by_question.append(similarities)
+
+            received_chunks_by_question.append(retrieved_chunks)
+            similarities_by_question.append(similarities)
         return received_chunks_by_question, similarities_by_question
 
-    def process_one(self, line: str) -> dict:
+    def process_one(self, line: str, line_num: int) -> dict:
 
         data = json.loads(line)
         target_id: int = data["id"]
@@ -273,7 +275,7 @@ class QuestionAsker(FileLineProcessor):
             question_list: List[str] = questions.split("\n")
 
             chunks_by_question, sim_by_question = self.ask_one_batch_questions(
-                question_list)
+                question_list, line_num=line_num)
 
             record[f"chunks_by_question_{lang}"] = chunks_by_question
             record[f"similarities_by_question_{lang}"] = sim_by_question
@@ -288,7 +290,7 @@ class ResultSummarizer(FileLineProcessor):
         self.map = {}
         self.available_langugages = ["cn", "en"]
 
-    def process_one(self, line: str) -> dict:
+    def process_one(self, line: str, line_num: int) -> dict:
         data = json.loads(line)
         target_id: int = data["target_id"]
 

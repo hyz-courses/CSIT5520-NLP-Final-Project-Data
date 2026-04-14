@@ -7,9 +7,9 @@ from files import QuestionGenerator
 
 load_dotenv("resources/.env")
 
-FILE_PATH = "resources/question_generation/milvus_storage.jsonl"
-DESTINATION_PATH = "resources/question_generation/milvus_questions.jsonl"
-LAST_VIEWED = "resources/question_generation/.last_viewed"
+FILE_PATH = "resources/question/milvus_storage.jsonl"
+DESTINATION_PATH = "resources/question/milvus_questions.jsonl"
+LAST_VIEWED = "resources/question/.last_viewed"
 
 
 if __name__ == "__main__":
