@@ -47,6 +47,10 @@ class FileLineProcessor(ABC):
         ...
 
     def process_all(self):
+        if not os.path.exists(self.count_file):
+            with open(self.count_file, "w") as f:
+                f.write("-1\n")
+
         with open(self.count_file, "r") as last_viewed_f:
             try:
                 last_viewed_num = int(last_viewed_f.read().strip())
@@ -395,6 +399,9 @@ class ResultAnalyzer(FileLineProcessor):
 
         for lang in self.available_languages:
             hits = data[f"hits_{lang}"]
+
+            if len(hits) == 0:
+                continue
             
             # NDCG at 1, 5, 10, and 20
             row_ndcg_values = [self._calc_row_ndcg(

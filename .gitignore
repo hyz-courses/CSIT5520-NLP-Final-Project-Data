@@ -7,6 +7,7 @@ resources/jsons/*.json
 resources/.env
 resources/question/.last_*
 resources/question/*.jsonl
+resources/question/*.json
 
 # Question Generation
 resources/question/.last_viewed

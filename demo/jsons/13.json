@@ -1,0 +1,121 @@
+[
+    {
+        "original_filename": "13.md",
+        "title1": "Meta",
+        "title2": null,
+        "text": "file name:2025年新生攻略13 | 激活科大学生账号及项目注册指南\nauthor:落叶飘满天空 落叶飘满天空 [MSSS]\ntime:_2025年7月23日 21:03_ _中国香港_",
+        "upload_time": "2026-04-02T15:25:15.069775"
+    },
+    {
+        "original_filename": "13.md",
+        "title1": "01 基础概念",
+        "title2": "1.1 项目注册",
+        "text": "项目注册英文为**Program Registration**，一般简称为「注册」，方法是线上填写填写教务处发出的在线注册表Online Registration Form，在本篇推文的第四部分有介绍。",
+        "upload_time": "2026-04-02T15:25:15.069775"
+    },
+    {
+        "original_filename": "13.md",
+        "title1": "01 基础概念",
+        "title2": "1.2 选课",
+        "text": "选课英文为**Course Registration**。在注册为科大学生之后，每个学期开学一周之前，会在Student Center网页（往年也叫Student Information System，简称SIS）进行选课。根据[2025-26学年的校历](https://mp.weixin.qq.com/s?__biz=MzAwNjAxNTYxNw==&mid=2651457498&idx=1&sn=1db75cad71a4af82cd2b0bd209f4035b&scene=21#wechat_redirect)，今年的选课开始时间是2025年8月26日。",
+        "upload_time": "2026-04-02T15:25:15.069775"
+    },
+    {
+        "original_filename": "13.md",
+        "title1": "01 基础概念",
+        "title2": "1.3 申请编号",
+        "text": "申请编号即**Application Number**，是一串11位数的编号，注册前与学校交流时有用（比如查询[学务资料寄送验证](https://mp.weixin.qq.com/s?__biz=MzAwNjAxNTYxNw==&mid=2651455453&idx=1&sn=c259e3ee76135f0b808b2bc22e83517e&scene=21#wechat_redirect)进度，查询[学生签证办理](https://mp.weixin.qq.com/s?__biz=MzAwNjAxNTYxNw==&mid=2651455399&idx=1&sn=a8b2fbc19cefcc1a9d39acd39116cec6&scene=21#wechat_redirect)进度），注册以后无用，比如：62500000000。",
+        "upload_time": "2026-04-02T15:25:15.069775"
+    },
+    {
+        "original_filename": "13.md",
+        "title1": "01 基础概念",
+        "title2": "1.4 学生证号",
+        "text": "学生证号英文为**Student ID/Student Number**，是一串八位的数字，印在你的科大卡上，在科大报名活动会经常用到，你可以在[宿舍申请](https://mp.weixin.qq.com/s?__biz=MzAwNjAxNTYxNw==&mid=2651456823&idx=1&sn=eb288e5bced00f5227bc2b16745dc43d&scene=21#wechat_redirect)的网页（适用于UG和RPG学生）或者邀请你注册的邮件里看到它，比如：20111111。",
+        "upload_time": "2026-04-02T15:25:15.069775"
+    },
+    {
+        "original_filename": "13.md",
+        "title1": "01 基础概念",
+        "title2": "1.5 学生账号",
+        "text": "ITSC是Information Technology Services Center资讯科技服务中心的缩写，此前由ITSC部门给科大成员分配学生帐号和职员帐号，因此科大就统称这些帐号叫ITSC帐号。从2025年1月1日起，ITSC部门与ISO部门重组为ITSO部门，ITSC账号从此更名为**科大账号**（其中包括学生账号、职员账号、部门账号），英文不太固定，网页有的写**HKUST Account**有的写**User Account**，总之现在称呼含糊了很多，可以想象未来将会有大量同学分不清**科大学生证号和学生账号**的区别 =.=\n-   ITSC(Information Technology Services Center) 资讯科技服务中心\n-   ISO(Information Systems Office) 信息系统处\n-   ITSO(Information Technology Services Office) 资讯科技服务处\nITSC + ISO --> ITSO\n![图片](https://mmbiz.qpic.cn/mmbiz_png/hXFlznfdEpsvwACBqZbAOW1jGgxgo4Q6lxPnlT6Ad4UoC3ReQicMqSa55Yzs4Ej15ficsem3LH9qEIticYp4ze0Uw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1)\nhttps://itso.hkust.edu.hk/services/general-it-services/user-account\n![图片](https://mmbiz.qpic.cn/mmbiz_png/hXFlznfdEpsvwACBqZbAOW1jGgxgo4Q6LSg3JK00xLZibspC2x3rssUHicWmFlTmkvU3H3ciaIarsPaPgMncM9jkA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2)\nhttps://itso.hkust.edu.hk/services/general-it-services/user-account/gethelp\n科大学生账号的形式是**一串英文字符**，共三部分组成：\n1.  **第一部分**是你的first name的首字母，以陈大文为例就是d；\n2.  **第二部分**是你的last name的全部字母，以陈大文为例就是chen；\n3.  **第三部分**是序号字母，排列顺序为 null, aa, ab, ..., az, ba, bb, ... ,ca, cb, ...\n这里需要注意：\n-   **学生帐号按照上述规则分配**，职员帐号可以自行定制。\n-   绝大多数内地同学的first name都是连在一起写的，这种情况下首字母也只有一个，比如陈大文同学的英文姓名应该是 Chen Dawen，first name首字母为d；\n-   如果这位陈大文同学误在申请科大时的申请系统里把自己的姓名写成了Chen Da Wen，则first name的首字母就会变成dw；我们发现每年都会有同学出席这个情况，这不影响入学。",
+        "upload_time": "2026-04-02T15:25:15.069775"
+    },
+    {
+        "original_filename": "13.md",
+        "title1": "01 基础概念",
+        "title2": "1.6 学生邮箱",
+        "text": "同上，往年我们称之为ITSC账号和ITSC邮箱的东西，现在名称变为学生账号和**学生邮箱**了。学生邮箱就是在学生账号后**加@connect.ust.hk**，与之相对的，职员邮箱则是在职员帐号后加@ust.hk。\n学生账号是学校分配给你的、不可以改动，因此学生邮箱也是不能改的，但是学生邮箱**可以设置一个email alias**，详情本文4.1部分。\n这里继续补充几个知识点：\n-   在以前，港科大还有以@student.ust.hk和@alumni.ust.hk为后缀的邮箱，不过现在已经不用了。大家得到的connect邮箱在**毕业以后可以照常使用**，自动成为校友邮箱，终身有效。\n-   **香港科技大学（广州）**的学生和职员的邮箱后缀分别是@connect.hkust-gz.edu.cn和@hkust-gz.edu.cn",
+        "upload_time": "2026-04-02T15:25:15.069775"
+    },
+    {
+        "original_filename": "13.md",
+        "title1": "02 重要时间线",
+        "title2": null,
+        "text": "大家如果已经收到了注册邀请邮件的话，请**尽快按照指南激活ITSC帐号、填写线上注册表**，并上传用于科大卡的照片。填写其实按部就班进行操作就好，如果担心的话可以把页面里的关键信息（即学生证号和学生账号）写在纸上以免自己遗忘了一时半会儿找不到。\n注册的**最终截止日期**是什么？其实没有这种说法，我们可以根据注册的用途来倒推一下：只有完成了注册你才能**进行选课**（今年选课开始时间是2025年8月26日），然后选课的Add/Drop Period是2025年9月1日~13日，也就是说如果你9月13日还没搞定注册，那就没办法添加秋季的课程了。\n目前，部分项目的同学已经收到ITSC账号激活、项目注册的邮件了，其他项目应该也会陆续收到。根据经验，到**8月中旬前**应该全部都会收到。\n在**注册以前**，你还是一个待入学的新生，基本上只有自己项目组、本科招生办公室以及霍英东研究生院会给你发邮件，提醒相关事宜。在**注册之后**，你才是一名正式的科大学生，科大所有部门都会给你发邮件，如科大资讯、活动推广等。\n如果没有完成注册或者没有拿到科大卡，**能参加项目迎新吗？能入住宿舍吗？能考ELPA吗？**这些都不用太担心，注册是ARO负责的，项目迎新是自己所在项目组织的，宿舍是SHRLO管理的，ELPA是CLE安排的，**每件事是谁主办的你就找谁**，它可能以为你完成了注册激活了科大账号，但你实际上还没有，这只要沟通好就不会出问题。",
+        "upload_time": "2026-04-02T15:25:15.069775"
+    },
+    {
+        "original_filename": "13.md",
+        "title1": "03 注册手续",
+        "title2": "3.1 邀请注册的邮件",
+        "text": "这封注册邀请邮件由**Academic Registry教务处**发送，给出了你的学生证号、科大账号等信息，其中列明你需要做的几件事是：\n1.  激活学生帐号；\n2.  完成在线注册表的填写；\n3.  上传个人证件及签证文件；\n4.  上传一张会被印在科大卡上的照片；\n5.  (本科生)填写一个声明表；\n![图片](https://mmbiz.qpic.cn/mmbiz_jpg/hXFlznfdEpsvwACBqZbAOW1jGgxgo4Q6vaIbJ7KiaNXicbXauticF8nTMNib7Pou4apJ77UXxQO9WOicbibhg9NuGZFQ/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3)",
+        "upload_time": "2026-04-02T15:25:15.069775"
+    },
+    {
+        "original_filename": "13.md",
+        "title1": "03 注册手续",
+        "title2": "3.2 激活学生账号",
+        "text": "**激活学生帐号**，简单填写自己的资料即可。如果大家发现激活网页遇到问题，不妨清除网页缓存、更换浏览器或重启电脑再试试。\n![图片](https://mmbiz.qpic.cn/mmbiz_png/hXFlznfdEpsvwACBqZbAOW1jGgxgo4Q63EdsiaVrA22BfJNJSuf8aeQbeF0GiaqMzJ5mAhcojC8mePaWicmWcCc8w/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4)\n![图片](https://mmbiz.qpic.cn/mmbiz_png/hXFlznfdEpsvwACBqZbAOW1jGgxgo4Q67pNAc0ElnR92yhfqib6dGw4XDVLkF8picsZ0wbicibPHGdMwSo0HGToQpg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5)\n激活学生帐号\nhttps://myaccount.ust.hk/ams/commonConsole/acctActivation",
+        "upload_time": "2026-04-02T15:25:15.069775"
+    },
+    {
+        "original_filename": "13.md",
+        "title1": "03 注册手续",
+        "title2": "3.3 填写在线注册表和上传文件",
+        "text": "**填写在线注册表**，如实填写即可。**上传相关文件**，也很简单，如实上传即可。有过香港身份证就上传，没有就不传。对于持中国内地户口的人士，旅行证件上传Exit-entry permit 港澳通行证，且应该上传通行证背面的逗留d签注。此前在[证件文件办理攻略](https://mp.weixin.qq.com/s?__biz=MzAwNjAxNTYxNw==&mid=2651455553&idx=1&sn=1984bc62fafebbe0db075931620ff028&scene=21#wechat_redirect)中我们提到过，入境标签Landing Slip俗称小白条，是持学生签证过关时才会拿到的，因此新生现在还无法给到，这个可以等稍后来香港那天再传。\n![图片](https://mmbiz.qpic.cn/mmbiz_jpg/hXFlznfdEpsvwACBqZbAOW1jGgxgo4Q6v6ZCicK6PjYGAFBI9N4ibpSqkd1V7icBbtpYFqbQ6yWpCxpqXyfA8zcWQ/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6)\n线上注册表填写及证件文件上传\n**上传一张将会被印在科大卡上的照片**。这里已经给出了十分具体的要求，包括一些不允许的情况，比如头的比例太大或太小，戴了帽子或太阳镜等等。\n这里上传的照片可能会显示不通过，这是一件好事，说明你照片不符合要求得太明显，以至于程序都能识别出来。如果你上传的照片不符合要求，但是程序没有识别出来，那可能才是麻烦，因为科大没有安排专人在后台审核这些照片；在你领取科大卡的当天，现场职员如果发现照片不合适，会让你当场重拍（来自这几年的亲身观察以及与相关部门的确认）。因此请一定仔细查看关于照片的要求！值得**认真拍一张**！\n![图片](https://mmbiz.qpic.cn/mmbiz_png/hXFlznfdEpsvwACBqZbAOW1jGgxgo4Q6MYn1DtLKPTQVNLnWnBkiaiaWGE1XcJLOdyxr5H5A1wXjOZXTIoBGbibEg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7)\n学生卡照片上传\n最后的一步**Assumption of Risk and Release Form**，这个表说的是如果你离开学校去别的地方参与实习、交换项目、课外活动，学校不能附额外的责任，因此需要你填一下这个声明表。如果同学未成年的话，还需要监护人签字。这一条是**本科新生**遇到的，研究生同学没有这一步。\n![图片](https://mmbiz.qpic.cn/mmbiz_png/hXFlznfdEpsvwACBqZbAOW1jGgxgo4Q6kY1TPZmKEnianiaoicwCLwSs1N2rxL9Tc3CW6fq7AWia6Hh4724UzaSibyg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8)\nAssumption of Risk and Release Form",
+        "upload_time": "2026-04-02T15:25:15.069775"
+    },
+    {
+        "original_filename": "13.md",
+        "title1": "03 注册手续",
+        "title2": "3.4 上传入境标签完成注册",
+        "text": "如果上述有资料没有齐，那么注册就不能算完全结束，但是大多数同学都要八月中下旬来港，那岂不是一直要到来港时才能完成注册？经过与学校部门的沟通了解，我们发现可以**这样理解这个问题**：\n1.  只要激活了ITSC账号，填写了在线注册表，把目前能传的证件文件都上传了（尤其是港澳通行证），这就算是**初步完成注册**了。完成初步注册以后，可以登录众多科大网站，可以在8月26日开始进行选课。\n2.  在拿到学生签证，办好逗留d签注，亲身来港拿到入境标签以后，需要尽快把入境标签上传到系统里，这样才能**正式完成注册**。只有这样，科大才会给你发邮件邀请你去领取实体的科大卡。\n让我们来**分析一下**：\n1.  之所以教务处给初步注册也设置了一个**截止日期**，是因为他们也需要一定时间来核实你填写的资料是否正确，确保你的学籍注册无误；\n2.  之所以需要收到入境标签，是因为要**确保你的学生签证已经激活**，持旅游签注来香港上学是违反香港入境条例的违法行为！而你如果还没有来香港，领科大卡也没有什么用。",
+        "upload_time": "2026-04-02T15:25:15.069775"
+    },
+    {
+        "original_filename": "13.md",
+        "title1": "04 注册以后",
+        "title2": "4.1 邮箱设置",
+        "text": "大家在科大就读期间每天都会用到邮箱，因此做好设置非常重要。\n**网页版登录**：o365.ust.hk（建议添加到收藏夹）\n**客户端登录**：强烈推荐Outlook（科大购买了许多正版软件，包括Office套装），如果想用windows自带邮箱等等也是可以的，详情在科大ITSC网页上都有指南\n![图片](https://mmbiz.qpic.cn/mmbiz_png/hXFlznfdEpsvwACBqZbAOW1jGgxgo4Q6BqwicnibibibZAaks7SjIfRTk6MwGH0hrrJI7fnBicLjMeEC56oOACB0bsg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=9)\n再介绍**两个进阶邮箱功能**，分别是修改Display Name和Email Alias。网页链接见图片下方标注，请复制粘贴到网页浏览器打开，需要登录科大账号。\n![图片](https://mmbiz.qpic.cn/mmbiz_png/hXFlznfdEpsvwACBqZbAOW1jGgxgo4Q6wJB9p6VkkrUo1ia6MHs8DvaIIZgsyQK8Qq68SiaMM3fU1OQBPxGzicEkw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=10)\nhttps://myaccount.ust.hk/psetup/connect/\n**Display Name**是你的邮箱的显示名，比如你可以设置为姓+名，英文名+姓+名等等，这个可以无限次数修改。\n**Email Alias**指的是你的邮箱的另一个自定义地址，即除了你的初始ITSC邮箱以外，你还可以设置一个邮箱地址。对于PG学生而言，必须包含姓的拼音。\n-   以陈大文同学而言，假设他的ITSC邮箱是dchenzz@connect.ust.hk，他可以把alias设置为jacky.chen@connect.ust.hk或者dawen.chen@connect.ust.hk或者bigwen.chen@connect.ust.hk等等。\n-   **请注意：Email Alias只能设置一次！**设置成功以后，你可以随时从这个email alias和你的初始科大邮箱地址进行切换。\n最后再介绍**一个冷知识**。大家可能已经注意到学生的邮箱是student@connect.ust.hk，而职员的邮箱是satff@ust.hk，那么如果给student@ust.hk发邮件会发生什么呢？student@ust.hk是否能正常登陆使用呢？大家感兴趣的话可以自行尝试一下。",
+        "upload_time": "2026-04-02T15:25:15.069775"
+    },
+    {
+        "original_filename": "13.md",
+        "title1": "04 注册以后",
+        "title2": "4.2 双重要素验证2FA",
+        "text": "2FA指的是**Two-Factor Authentication**，中文翻译为「双重要素验证」，是微软为了保护大家的数据安全推出的一个安全措施。\n往年科大要求大家下载的是Duo这个APP，简单来说就是：你要在自己的移动设备上下载Duo这个APP并设置好，之后在科大各种网站登陆学生帐号、连接科大VPN等重要操作时，Duo这个APP会弹出消息提示，此时你需要点击同意，才能继续登陆。密码和你的移动设备确认，构成这个「双重验证」。\n今年小编发现学校再次更新了要求，目前**除了Duo以外又新增了Miscrosoft Azure MFA，对应Authenticator这个APP**。科大把这两种方法的设置都给了详细的说明，意思似乎是让你二选一，这里小编补充几个细节：\n-   在Duo设置的页面又加了句reminder是 **Reminder: We highly recommend using Microsoft Entra MFA as your primary two-factor authentication (2FA)**，科大似乎是希望新生都尽可能用Microsoft Entra MFA；\n-   在介绍页面，科大列出了学生和职员需要使用2FA的场景，其中访问**科大HPC高性能计算集群只能使用Duo验证**；\n![图片](https://mmbiz.qpic.cn/mmbiz_png/hXFlznfdEpsvwACBqZbAOW1jGgxgo4Q6pZibibiaexDxGreJVe73UEaDGctV1BYCPib3VzEf0Jhf8TN1WnSd50pIHg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=11)\nhttps://itsc.hkust.edu.hk/cyber-security/2FA\n总之，大家可以根据自己的需求来决定具体用哪一种。小编作为此前绑定Duo验证的老生，目前登录各类账号没有遇到需要设置的问题。另外，如果大家只绑定了一个手机，然后**遇到丢失/关机/需要更换手机等情况**，你可以在网页上获取一个**一次性登陆码**（如下图红框所示），详情可以参考如下网页指南。\n![图片](https://mmbiz.qpic.cn/mmbiz_png/hXFlznfdEpsvwACBqZbAOW1jGgxgo4Q6nJ7wIo3ZhZpNWicrFhnyqIZ6XdyJtibFN4iaSAicbj2Z4cBR75MLE16Vuw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=12)\nhttps://itsc.hkust.edu.hk/cyber-security/2FA",
+        "upload_time": "2026-04-02T15:25:15.069775"
+    },
+    {
+        "original_filename": "13.md",
+        "title1": "04 注册以后",
+        "title2": "4.3 科大资源软件",
+        "text": "完成线上注册以后，你就正式成为一名科大学生了。\n比如可以登录**科大的各大网站**，在Hotlinks网站查到学生相关的各种事情，在Student Center查看自己的学费账单，在图书馆网站登录预定房间，等等。详情可以查看科大全攻略4.4页面，我们稍后也会再次更新**推文版的科大最新的网站及APP指南**。\n还可以使用**科大的各种资源**，比如下载科大提供的各类软件，使用科大提供的VPN，申请科大提供的HPC高性能计算集群帐号，等等。详情可以查看科大全攻略3.2页面，我们稍后也会再次更新**推文版的科大资源软件指南**。\n![图片](https://mmbiz.qpic.cn/mmbiz_jpg/hXFlznfdEpsvwACBqZbAOW1jGgxgo4Q6RZ8OiaGeSmz510HpAssAymqPvia3uHelu3ugbZlODgibdR7Ynrh3CrnZw/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=13)\n![图片](https://mmbiz.qpic.cn/mmbiz_jpg/hXFlznfdEpsvwACBqZbAOW1jGgxgo4Q68ibicycW4vWxbIajghEv7wCibtsuSOHVYtvzuiaj8WVn9ibaTZ5Vey99cHg/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=14)\n科大全攻略3.2及4.4页面",
+        "upload_time": "2026-04-02T15:25:15.069775"
+    },
+    {
+        "original_filename": "13.md",
+        "title1": "04 注册以后",
+        "title2": "4.4 选课准备",
+        "text": "离来港还有一段时间，大家可以为选课做一些准备了，比如可以了解一下自己有哪些课可以选、计划准备选些什么课程，可以咨询学长学姐的选课建议，或者遇到疑问联系项目提问。\n我们[此前撰写的选课指南](https://mp.weixin.qq.com/s?__biz=MzAwNjAxNTYxNw==&mid=2651448659&idx=1&sn=efe5200d5aa937f9032d2c8ffa9a32a2&scene=21#wechat_redirect)已经非常全面，包含**选课规划（选什么课？）、选课实操（怎样选课？）、绩点计算（如何毕业？）、选科大别的“课”、选别的学校的课**这五个部分，欢迎大家阅读。推文里提到了诸多科大网站，大家在激活了科大学生账号以后均可以无障碍浏览。稍后我们将更新其中的一些网站与资源，推出今年版的最新攻略。",
+        "upload_time": "2026-04-02T15:25:15.069775"
+    },
+    {
+        "original_filename": "13.md",
+        "title1": "005 常见问题",
+        "title2": null,
+        "text": "Q1、什么时候收到邀请注册邮件？\nA1、根据往年经验，UG学生会在7月中旬收到（今年UG新生于7月14日收到邮件），PG学生会在7月下旬收到（去年为7月23日收到）。因此今年预计很快大家都会收到邮件，如果同一个项目的同学都收到邮件、只有自己没收到，可以询问项目组。\n另外，大家也可以检查一下自己的[学务资料是否全部都寄送且验证成功](https://mp.weixin.qq.com/s?__biz=MzAwNjAxNTYxNw==&mid=2651455453&idx=1&sn=c259e3ee76135f0b808b2bc22e83517e&scene=21#wechat_redirect)，状态变成了offer confirmed - pending program registration，这是注册的前提。\nQ2、我不喜欢我的科大账号，能改吗？\nA2、目前没有听过修改成功的先例。往年有同学反映科大账号(旧称ITSC账号)是自己ex名字的缩写、是脏话、包含不友好的英文单词等等，但最后也接受了，如果大家真的非常不能接受的话，也可以咨询ITSO部门，联系邮箱是cchelp@ust.hk。\nQ3、重置邮箱密码失败/网页一直报错，怎么办？\nA3、建议大家把学生证号、学生账号等信息都准备在手边，确保网络环境稳定，这是为了能保证**一次性、不出错且用比较短的时间填完资料**。\n在填写过程中，一定**不要回退(backspace)任何网页**；也不要**填到一半退出**了，想着稍后再进来。网页上出现的一些信息，可以顺手记录下来，以便之后需要使用。\n如果遇到问题，可以尝试更换浏览器（chrome或者ie都可以试一下），清除网页缓存甚至重启电脑，再试一次。实在不行就联系ITSO部门，联系邮箱是cchelp@ust.hk。",
+        "upload_time": "2026-04-02T15:25:15.069775"
+    }
+]
