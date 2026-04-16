@@ -229,7 +229,18 @@ class QuestionAsker(FileLineProcessor):
         }
         self.available_languages = ["cn", "en"]
 
-    def ask_one_batch_questions(self, questions: List[str], line_num: int):
+    def _deduplicate(self, results: List[Dict[str, float | int]]):
+        seen_ids = set()
+        out = []
+
+        for result in results:
+            if result["id"] in seen_ids or len(seen_ids) >= 20:
+                continue
+            seen_ids.add(result["id"])
+            out.append(result)
+        return out
+
+    def _ask_one_batch_questions(self, questions: List[str], line_num: int):
         received_chunks_by_question = []
         similarities_by_question = []
         for question in tqdm(questions, desc=f"Line {line_num}"):
@@ -245,9 +256,13 @@ class QuestionAsker(FileLineProcessor):
             response = json.loads(_response.content)
 
             # {distance: float, id: int}
-            result_list: List[Dict[str, float | int]
-                              ] = eval(response["data"]["outputs"]["id"])
+            _result_list: List[Dict[str, float | int]] = eval(
+                response["data"]["outputs"]["retrieved_chunks"])
 
+            result_list = self._deduplicate(_result_list)
+            result_list = result_list[:20]  # Limit to 20 results
+
+            # Retrieve chunks and similarities
             retrieved_chunks = [result["id"] for result in result_list]
             similarities = [result["distance"] for result in result_list]
 
@@ -274,7 +289,7 @@ class QuestionAsker(FileLineProcessor):
             questions: str = data[f"questions_{lang}"]
             question_list: List[str] = questions.split("\n")
 
-            chunks_by_question, sim_by_question = self.ask_one_batch_questions(
+            chunks_by_question, sim_by_question = self._ask_one_batch_questions(
                 question_list, line_num=line_num)
 
             record[f"chunks_by_question_{lang}"] = chunks_by_question
