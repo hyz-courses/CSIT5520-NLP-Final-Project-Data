@@ -1,6 +1,7 @@
 .vscode
 __pycache__
 .idea
+csit5520-data-venv
 
 resources/jsons/*.json
 resources/.env
@@ -12,3 +13,4 @@ resources/question/.last_viewed
 
 # Question Asking
 resources/question/.last_asked
+

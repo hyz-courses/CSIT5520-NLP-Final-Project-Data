@@ -1,3 +1,4 @@
+import math
 import os
 import time
 import re
@@ -30,7 +31,7 @@ class FSDirectoryProcessor(ABC):
         ...
 
     def process_all(self):
-        for file_name in os.listdir(self.source_dir):
+        for file_name in sorted(os.listdir(self.source_dir)):
             if file_name.endswith(self.file_ext):
                 self.process_one(Path(file_name).stem)
 
@@ -55,7 +56,7 @@ class FileLineProcessor(ABC):
 
         with open(self.des_file, "a", encoding="utf-8") as des_f:
             with open(self.count_file, "w") as last_viewed_f:
-                with open(self.source_file, "r") as f:
+                with open(self.source_file, "r", encoding="utf-8") as f:
                     i = 0
                     for line in f:
                         if i <= last_viewed_num:
@@ -197,11 +198,13 @@ class QuestionGenerator(FileLineProcessor):
 
     def process_one(self, line: str, line_num: int):
         data = json.loads(line)
-        id: int = data["id"]
+        chunk_id: int = data["chunk_id"]
+        chunk_hash: str = data["chunk_hash"]
         text: str = data["text"]
 
         record = {
-            "id": id,
+            "chunk_id": chunk_id,
+            "chunk_hash": chunk_hash,
             "questions_cn": None,
             "questions_en": None
         }
@@ -230,13 +233,13 @@ class QuestionAsker(FileLineProcessor):
         self.available_languages = ["cn", "en"]
 
     def _deduplicate(self, results: List[Dict[str, float | int]]):
-        seen_ids = set()
+        seen_hashes = set()
         out = []
 
         for result in results:
-            if result["id"] in seen_ids or len(seen_ids) >= 20:
+            if result["chunk_hash"] in seen_hashes or len(seen_hashes) >= 20:
                 continue
-            seen_ids.add(result["id"])
+            seen_hashes.add(result["chunk_hash"])
             out.append(result)
         return out
 
@@ -263,7 +266,7 @@ class QuestionAsker(FileLineProcessor):
             result_list = result_list[:20]  # Limit to 20 results
 
             # Retrieve chunks and similarities
-            retrieved_chunks = [result["id"] for result in result_list]
+            retrieved_chunks = [result["chunk_hash"] for result in result_list]
             similarities = [result["distance"] for result in result_list]
 
             received_chunks_by_question.append(retrieved_chunks)
@@ -273,10 +276,10 @@ class QuestionAsker(FileLineProcessor):
     def process_one(self, line: str, line_num: int) -> dict:
 
         data = json.loads(line)
-        target_id: int = data["id"]
+        target_hash: str = data["chunk_hash"]
 
         record = ({
-            "target_id": target_id,
+            "target_hash": target_hash,
         } | {f"chunks_by_question_{lang}": [] for lang in self.available_languages} |
             {f"similarities_by_question_{lang}": [] for lang in self.available_languages})
 
@@ -302,32 +305,101 @@ class ResultSummarizer(FileLineProcessor):
     def __init__(self, source_dir: str, des_dir: str, last_viewd: str):
         super().__init__(source_dir, des_dir, last_viewd)
 
-        self.map = {}
-        self.available_langugages = ["cn", "en"]
+        self.available_languages = ["cn", "en"]
 
     def process_one(self, line: str, line_num: int) -> dict:
         data = json.loads(line)
-        target_id: int = data["target_id"]
+        target_hash: int = data["target_hash"]
 
-        if target_id not in self.map:
-            self.map[target_id] = {
-                "hit_at": [],
-                "total_num": []
-            }
+        record = ({
+            "target_hash": target_hash,
+        } | {f"hits_{lang}": [] for lang in self.available_languages})
 
-        for lang in self.available_langugages:
-            chunks_by_question_key = f"chunks_by_question_{lang}"
-            similarities_by_question_key = f"similarities_by_question_{lang}"
+        for lang in self.available_languages:
+            # Chunk-by-question key
+            cbq_key = f"chunks_by_question_{lang}"
 
-            if chunks_by_question_key not in data or data[chunks_by_question_key] is None or not isinstance(data[chunks_by_question_key], list):
+            if (cbq_key not in data
+                or data[cbq_key] is None
+                    or not isinstance(data[cbq_key], list)):
+                # No data for this language
                 continue
 
-            for chunks, similarities in zip(data[chunks_by_question_key], data[similarities_by_question_key]):
-                chunks: List[int]
-                similarities: List[float]
+            hits = []
 
-                hit_at = chunks.index(target_id) if target_id in chunks else -1
-                self.map[target_id]["hit_at"].append(hit_at)
-                self.map[target_id]["total_num"].append(len(chunks))
+            for hash_list in data[cbq_key]:
+                # Loop over all the questions regarding this text paragraph.
+                hash_list: List[str]
 
-        return {}
+                # Index of the exact match in the list of chunks.
+                hit_at = -1
+                if target_hash in hash_list:
+                    hit_at = hash_list.index(target_hash)
+
+                hits.append(hit_at)
+
+            record[f"hits_{lang}"] = hits
+
+        # {target_hash: str, hits_cn: List[int], hits_en: List[int]}
+        return record
+
+
+class ResultAnalyzer(FileLineProcessor):
+
+    def __init__(self, source_dir: str, des_dir: str, last_viewd: str):
+        super().__init__(source_dir, des_dir, last_viewd)
+
+        self.available_languages = ["cn", "en"]
+
+        # _base = {"NDCG@1": 0, "NDCG@5": 0, "NDCG@10": 0, "NDCG@20": 0}
+
+        # record = dict([
+        #     (lang, copy.deepcopy(_base)) for lang in self.available_languages])
+
+        # self.UNIVERSAL_IDCG = 1
+
+        self.NDCG_K_VALUES = [1, 5, 10, 20]
+
+    def _calc_row_ndcg(self, hits: List[int], k: int) -> float:
+        """
+        Calculates NDCG@k for a jsonl data row, i.e., 
+        corresponds to a unique target hash. 
+        
+        Each row contains multiple hits, and each hit corresponds
+        to a question. 
+        
+        The row NDCG@k is the average of NDCG@k for each question.
+        """
+        question_ndcgs = []
+
+        for hit in hits:
+            dcg_at_k = 0
+            if hit != -1 and hit < k:   # hit starts at 0
+                # Again, hit starts at 0,
+                # but NDCG is 1-based
+                dcg_at_k = 1 / math.log2(hit + 2)
+
+            # Here, IDCG = 1. 
+            # So we can directly use DCG as NDCG.
+            question_ndcgs.append(dcg_at_k)
+
+        target_hash_ndcg = sum(question_ndcgs) / len(question_ndcgs)
+
+        return target_hash_ndcg
+
+    def process_one(self, line: str, line_num: int) -> dict:
+        data = json.loads(line)
+
+        record = {f"ndcg_values_{lang}": []
+                  for lang in self.available_languages}
+
+        for lang in self.available_languages:
+            hits = data[f"hits_{lang}"]
+            
+            # NDCG at 1, 5, 10, and 20
+            row_ndcg_values = [self._calc_row_ndcg(
+                hits, k) for k in self.NDCG_K_VALUES]
+
+            record[f"ndcg_values_{lang}"] = row_ndcg_values
+
+        return record
