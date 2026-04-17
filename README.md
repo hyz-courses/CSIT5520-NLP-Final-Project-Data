@@ -76,7 +76,7 @@ pip install -r requirements.txt
 Run this command to chat with the pipeline.
 
 ```bash
-python -m app
+streamlit run app.py
 ```
 
 ## Parse and Upload

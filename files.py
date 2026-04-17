@@ -19,6 +19,12 @@ load_dotenv("./resources/.env")
 
 
 class FSDirectoryProcessor(ABC):
+    
+    """
+    Abstract class for processing multiple files 
+    of the same extensions in a given directory.
+    """
+
     def __init__(self, file_ext: str, source_dir: str, des_dir: str):
         if not file_ext.startswith("."):
             raise ValueError("File extension should start with a dot.")
@@ -37,6 +43,12 @@ class FSDirectoryProcessor(ABC):
 
 
 class FileLineProcessor(ABC):
+
+    """
+    Abstract class for processing multiple lines 
+    in a .jsonl file.
+    """
+
     def __init__(self, source_file: str, des_file: str, count_file: str):
         self.source_file = source_file
         self.count_file = count_file
@@ -87,6 +99,12 @@ class FileLineProcessor(ABC):
 
 
 class MarkdownParser(FSDirectoryProcessor):
+
+    """
+    Processor for parsing markdown files into 
+    structured json format, which is one-one to 
+    the chunks.
+    """
 
     def __init__(self, source_dir: str, des_dir: str):
         super().__init__(".md", source_dir, des_dir)
@@ -141,6 +159,11 @@ class MarkdownParser(FSDirectoryProcessor):
 
 class JsonUploader(FSDirectoryProcessor):
 
+    """
+    Processor for uploading structured json data 
+    into vector database via our FastAPI server.
+    """
+
     def __init__(self, source_dir: str, des_dir: str):
         super().__init__(".json", source_dir, des_dir)
 
@@ -170,6 +193,10 @@ class JsonUploader(FSDirectoryProcessor):
 
 
 class QuestionGenerator(FileLineProcessor):
+
+    """
+    Processor for generating questions based on text chunks.
+    """
 
     def __init__(self, source_dir: str, des_dir: str, last_viewd: str):
         super().__init__(source_dir, des_dir, last_viewd)
@@ -225,6 +252,11 @@ class QuestionGenerator(FileLineProcessor):
 
 
 class QuestionAsker(FileLineProcessor):
+
+    """
+    Processor for asking questions to dify 
+    using the retrieval test pipeline.
+    """
 
     def __init__(self, source_dir: str, des_dir: str, last_viewd: str):
         super().__init__(source_dir, des_dir, last_viewd)
@@ -306,6 +338,11 @@ class QuestionAsker(FileLineProcessor):
 
 
 class ResultSummarizer(FileLineProcessor):
+
+    """
+    Processor to summarize the results of the retrieval test.
+    """
+    
     def __init__(self, source_dir: str, des_dir: str, last_viewd: str):
         super().__init__(source_dir, des_dir, last_viewd)
 
@@ -349,6 +386,11 @@ class ResultSummarizer(FileLineProcessor):
 
 
 class ResultAnalyzer(FileLineProcessor):
+
+    """
+    Processor to analyze the results of the retrieval test.
+    Calculates NDCG based on hit data.
+    """
 
     def __init__(self, source_dir: str, des_dir: str, last_viewd: str):
         super().__init__(source_dir, des_dir, last_viewd)

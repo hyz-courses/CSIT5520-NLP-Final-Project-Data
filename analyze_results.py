@@ -1,7 +1,5 @@
 import json
-from typing import List
 from dotenv import load_dotenv
-import pandas as pd
 from files import ResultAnalyzer
 
 load_dotenv("resources/.env")
