@@ -360,11 +360,11 @@ class ResultSummarizer(FileLineProcessor):
             # Chunk-by-question key
             cbq_key = f"chunks_by_question_{lang}"
 
-            if (cbq_key not in data
-                or data[cbq_key] is None
-                    or not isinstance(data[cbq_key], list)):
-                # No data for this language
-                continue
+            # if (cbq_key not in data
+            #     or data[cbq_key] is None
+            #         or not isinstance(data[cbq_key], list)):
+            #     # No data for this language
+            #     continue
 
             hits = []
 
