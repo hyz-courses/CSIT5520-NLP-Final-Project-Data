@@ -38,12 +38,13 @@ All the related data are stored in the [demo](demo/) folder. It is a static snap
 
 ### Retrieval Test Result
 
-We performed [retrieval test](#retrieval-test) on our milvus data. The results are follows.
+We performed [retrieval test](#retrieval-test) on our milvus data. The **final** results are follows.
 
 | Question Language| NDCG@1 | NDCG@5 | NDCG@10 | NDCG@20 |
 | --- | --- | --- | --- | --- |
-| Chinese | 0.46500 | 0.60390 | 0.63095 | 0.64787 |
-| English | 0.55209 | 0.68106 | 0.70293 | 0.71641 |
+| Chinese | 0.46565 | 0.60494 | 0.63176 | 0.64865 |
+| English | 0.55206 | 0.68110 | 0.70284 | 0.71637 |
+
 
 ## Setup
 
