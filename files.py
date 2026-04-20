@@ -19,7 +19,7 @@ load_dotenv("./resources/.env")
 
 
 class FSDirectoryProcessor(ABC):
-    
+
     """
     Abstract class for processing multiple files 
     of the same extensions in a given directory.
@@ -342,7 +342,7 @@ class ResultSummarizer(FileLineProcessor):
     """
     Processor to summarize the results of the retrieval test.
     """
-    
+
     def __init__(self, source_dir: str, des_dir: str, last_viewd: str):
         super().__init__(source_dir, des_dir, last_viewd)
 
@@ -410,10 +410,10 @@ class ResultAnalyzer(FileLineProcessor):
         """
         Calculates NDCG@k for a jsonl data row, i.e., 
         corresponds to a unique target hash. 
-        
+
         Each row contains multiple hits, and each hit corresponds
         to a question. 
-        
+
         The row NDCG@k is the average of NDCG@k for each question.
         """
         question_ndcgs = []
@@ -425,7 +425,7 @@ class ResultAnalyzer(FileLineProcessor):
                 # but NDCG is 1-based
                 dcg_at_k = 1 / math.log2(hit + 2)
 
-            # Here, IDCG = 1. 
+            # Here, IDCG = 1.
             # So we can directly use DCG as NDCG.
             question_ndcgs.append(dcg_at_k)
 
@@ -436,15 +436,18 @@ class ResultAnalyzer(FileLineProcessor):
     def process_one(self, line: str, line_num: int) -> dict:
         data = json.loads(line)
 
-        record = {f"ndcg_values_{lang}": []
-                  for lang in self.available_languages}
+        record = {
+            "target_hash": data["target_hash"],
+        } | {
+            f"ndcg_values_{lang}": []
+            for lang in self.available_languages}
 
         for lang in self.available_languages:
             hits = data[f"hits_{lang}"]
 
             if len(hits) == 0:
                 continue
-            
+
             # NDCG at 1, 5, 10, and 20
             row_ndcg_values = [self._calc_row_ndcg(
                 hits, k) for k in self.NDCG_K_VALUES]
